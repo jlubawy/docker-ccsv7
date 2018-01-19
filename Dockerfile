@@ -5,6 +5,7 @@ FROM ubuntu:16.04
 #
 # Other essential packages:
 #   * at-spi2-core: for warning solved here https://github.com/NixOS/nixpkgs/issues/16327
+#   * libpython2.7: ti.xpcom dependency
 #
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
@@ -26,6 +27,7 @@ RUN dpkg --add-architecture i386 && \
         libice6:i386 \
         libncurses5:i386 \
         liborbit2:i386 \
+        libpython2.7 \
         libsm6:i386 \
         libstdc++6:i386 \
         libudev1:i386 \
