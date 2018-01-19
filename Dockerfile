@@ -2,9 +2,14 @@ FROM ubuntu:16.04
 
 # Update and install all packages as listed here:
 # http://processors.wiki.ti.com/index.php/Linux_Host_Support_CCSv6#Ubuntu_16.04_64bit
+#
+# Other essential packages:
+#   * at-spi2-core: for warning solved here https://github.com/NixOS/nixpkgs/issues/16327
+#
 RUN dpkg --add-architecture i386 && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
+        at-spi2-core \
         gtk2-engines-murrine:i386 \
         libasound2:i386 \
         libatk1.0-0:i386 \
